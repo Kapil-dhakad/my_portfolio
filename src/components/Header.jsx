@@ -1,10 +1,10 @@
-import React from 'react'
-
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = ["Home", "About", "Services", "Projects", "Contact"];
 
   return (
     <motion.header
@@ -13,15 +13,15 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 w-full bg-[#0a0f1a] text-white shadow-md z-50"
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-3xl cursor-pointer font-bold">
+        <h1 className="text-2xl sm:text-3xl font-bold cursor-pointer">
           <span className="text-blue-400">Portfolio.</span>
         </h1>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6 text-lg">
-          {["Home", "About", "Services", "Projects", "Contact"].map((item, index) => (
+        <nav className="hidden md:flex gap-4 sm:gap-6 text-base sm:text-lg">
+          {menuItems.map((item, index) => (
             <motion.a
               key={index}
               whileHover={{ scale: 1.1, color: "#38bdf8" }}
@@ -40,16 +40,18 @@ export default function Header() {
         >
           {isOpen ? "✖" : "☰"}
         </button>
+      </div>
 
-        {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu */}
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-16 left-0 w-full bg-[#0a0f1a] p-4 flex flex-col items-center gap-4 md:hidden"
+            className="md:hidden bg-[#0a0f1a] w-full px-6 pb-4 flex flex-col items-center gap-4"
           >
-            {["Home", "About", "Services", "Projects", "Contact"].map((item, index) => (
+            {menuItems.map((item, index) => (
               <a
                 key={index}
                 className="text-lg text-white hover:text-blue-400 transition-all duration-300"
@@ -61,7 +63,7 @@ export default function Header() {
             ))}
           </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </motion.header>
   );
 }

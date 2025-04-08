@@ -1,34 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Typical from 'react-typical';
 import kapilImg from '../assets/kapil.jpg';
 
 export default function HeroSection() {
   return (
-    <div
+    <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-[#0a0f1a] px-4 py-10 text-white"
+      className="min-h-screen flex items-center justify-center bg-[#0a0f1a] px-4 sm:px-6 lg:px-8 py-16 text-white"
     >
-      <div className="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center gap-10">
+      <div className="w-full max-w-7xl flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Left Section */}
         <div className="text-center md:text-left flex-1">
           <h2 className="text-sm sm:text-base font-medium text-gray-300">
             Hello, It's Me
           </h2>
 
-          <h1 className="text-3xl sm:text-4xl font-bold mt-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
             Kapil <span className="text-blue-400">Choudhary</span>
           </h1>
 
-          <h3 className="text-xl sm:text-2xl font-semibold mt-1">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mt-1">
             I'm a{' '}
-            <span className="text-blue-400">
-              <Typical
-                steps={['Frontend Developer', 2000, 'React Developer', 2000, 'UI Designer', 2000]}
-                loop={Infinity}
-                wrapper="span"
-              />
-            </span>
+            <span className="text-blue-400">Frontend Developer</span>
           </h3>
 
           <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed">
@@ -81,7 +74,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="relative flex-1 flex justify-center"
         >
-          <div className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg relative">
+          <div className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg relative">
             <img src={kapilImg} alt="Kapil" className="w-full h-full object-cover" />
           </div>
 
@@ -99,6 +92,6 @@ export default function HeroSection() {
           />
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
