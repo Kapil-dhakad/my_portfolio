@@ -25,7 +25,7 @@ const projects = [
     id: 4,
     title: "VirtualR Dashboard",
     image: "/images/img5.png",
-    url: "https://shivkripaa.vercel.app/",
+    url: "https://virtual-main.vercel.app/",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const projects = [
     id: 6,
     title: "Dark Designer Model",
     image: "/images/img6.png",
-    url: "https://your-designer-model.vercel.app",
+    url: "https://darkdesigner.vercel.app/",
   },
 ];
 
