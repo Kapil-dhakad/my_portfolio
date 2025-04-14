@@ -48,7 +48,7 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start">
             <motion.a
-              href="/resume.pdf"
+              href="/Kapil.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
