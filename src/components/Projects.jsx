@@ -1,14 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Sample project data
+// Sample project data with links
 const projects = [
-  { id: 1, title: "Food Ordering", image: "/images/img1.png" },
-  { id: 2, title: "E-commerce Website", image: "/images/img4.png" },
-  { id: 3, title: "AI-Based Assistant", image: "/images/img2.png" },
-  { id: 4, title: "VirtualR Dashboard", image: "/images/img5.png" },
-  { id: 5, title: "Construction System", image: "/images/img3.png" },
-  { id: 6, title: "Dark Designer Model", image: "/images/img6.png" },
+  {
+    id: 1,
+    title: "Food Ordering",
+    image: "/images/img1.png",
+    url: "https://foodweb-pi.vercel.app/", // replace with real URL
+  },
+  {
+    id: 2,
+    title: "E-commerce Website",
+    image: "/images/img4.png",
+    url: "https://shopme-chi.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "AI-Based Assistant",
+    image: "/images/img2.png",
+    url: "https://kapilsvirtualassistance.netlify.app/",
+  },
+  {
+    id: 4,
+    title: "VirtualR Dashboard",
+    image: "/images/img5.png",
+    url: "https://shivkripaa.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "Construction System",
+    image: "/images/img3.png",
+    url: "https://your-construction.vercel.app",
+  },
+  {
+    id: 6,
+    title: "Dark Designer Model",
+    image: "/images/img6.png",
+    url: "https://your-designer-model.vercel.app",
+  },
 ];
 
 export default function Projects() {
@@ -31,7 +61,10 @@ export default function Projects() {
       {/* Project Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {projects.map((project) => (
-          <motion.div
+          <motion.a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
             key={project.id}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -52,7 +85,7 @@ export default function Projects() {
                 {project.title}
               </h3>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </section>
