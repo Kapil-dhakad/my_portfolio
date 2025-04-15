@@ -46,10 +46,12 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="mobile-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-[#0a0f1a] w-full px-6 pb-4 flex flex-col items-center gap-4"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-[#0a0f1a]/90 backdrop-blur-sm w-full px-6 pb-4 flex flex-col items-center gap-4"
           >
             {menuItems.map((item, index) => (
               <a
